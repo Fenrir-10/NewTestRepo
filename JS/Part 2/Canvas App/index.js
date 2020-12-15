@@ -2,8 +2,8 @@ const {Engine, Render, Runner, World, Bodies, Body, Events} = Matter;
 
 const width = window.innerWidth;
 const height = window.innerHeight;
-const cellsHorizontal = 15;
-const cellsVertical = 14;
+const cellsHorizontal = 10;
+const cellsVertical = 10;
 
 const unitLengthX = width/cellsHorizontal;
 const unitLengthY = height/cellsVertical;
@@ -222,13 +222,13 @@ Events.on(engine, 'collisionStart', event => {
         labels.includes(collision.bodyB.label))
         {   
             document.querySelector('.winner').classList.remove('hidden');
-            console.log(button);
             world.gravity.y = 1;    
             world.bodies.forEach(body =>{
-                if(body.label === 'wall'){
+                if(body.label === 'wall'||body.label==='goal'){
                     Body.setStatic(body,false);
                 }
             })
+            World.remove(world,walls);
         }
     })
 })
