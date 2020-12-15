@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+        .hidden{
+            display:none !important;
+        }
+        h1{
+            color: white;
+            font-size: 78px;
+        }
+        .winner{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+            height: 100vh;
+            width: 100vw;
+        }
+        .button{
+            background-color: transparent;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            overflow: hidden;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+             display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<title>Maze Map</title>
+<body>
+    <div class="winner hidden">
+        <h1>YOU WIN!!</h1>
+        <input class = "button" type="button" value="Play Again" onClick="window.location.reload();">
+    </div>
+    <script src="index.js"></script>    
+</body>
+</html>
+
+
+
